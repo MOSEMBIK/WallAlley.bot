@@ -10,6 +10,6 @@
 **Use "/" commands or prefix with "w!"**
 
 - help
-- track _< actif >_
-- price _< actif >_
+- track _<actif>_
+- price _<actif>_
 - ...
