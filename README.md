@@ -9,7 +9,7 @@
 ### Help for cmd
 **Use "/" commands or prefix with "w!"**
 
-- help
-- track _\<actif name/symbol>_
-- price _\<actif name/symbol>_
+- help                                  :  _Return help page_
+- track _\<asset name/symbol>_          :  _Return stats for the asked asset_
+- price _\<asset name/symbol>_          :  _Return last price for the asked asset_
 - ...
