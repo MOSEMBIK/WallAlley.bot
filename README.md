@@ -4,7 +4,7 @@
 <p>
     WallAlley.bot is an open source and free to use financial discord bot 
     originaly build for WallAlley server's community.
-    All data are provided by the <a href="https://rapidapi.com/">Rapid API</a>.
+    All data are provided by the <a href="https://finance.yahoo.com/">Yahoo Finance API</a>.
 </p>
 
 ### Help page
