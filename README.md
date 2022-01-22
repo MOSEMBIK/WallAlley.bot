@@ -7,7 +7,7 @@
     All data are provided by the <a href="https://www.yahoofinanceapi.com/">Yahoo Finance API</a>
 </p>
 
-### Help for cmd
+### Help page
 **Use "/" commands or prefix with "w!"**
 
 - help : _Return help page_
