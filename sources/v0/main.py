@@ -1,5 +1,6 @@
-from config import token
-from embedmake import *
+from src.config import token
+from src.embedmake import *
+from src.assets import assets
 
 import json
 import time
@@ -12,8 +13,6 @@ from discord.ext import commands
 from discord.ext import tasks
 from discord_slash import SlashCommand
 
-from sources.v0.config import YFAPI, YFUrl
-
 TOKEN = token
 bot = commands.Bot("w!")
 bot.remove_command('help')
@@ -24,6 +23,8 @@ async def on_ready():
     print("WallAlley.bot has join.")
 
 # ------------------------------------------------
+
+
 
 # ------------------------------------------------
 # Command
@@ -46,14 +47,14 @@ async def price(ctx, message):
 async def _price(ctx, message):
     await price(ctx, message)
 
-# Order
+# Track
 @bot.command()
 async def track(ctx, message):
     embed = trackEmbed()
     await ctx.send(embed=embed)
 @slash.slash(name="Track", description="Return stats for the asked asset.")
-async def _track(ctx):
-    await track(ctx)
+async def _track(ctx, message):
+    await track(ctx, message)
 
 
 bot.run(TOKEN)
