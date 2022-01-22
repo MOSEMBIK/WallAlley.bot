@@ -1,6 +1,6 @@
 from src.config import token
 from src.embedmake import *
-from src.assets import assets
+from src.function import *
 
 import json
 import time
@@ -41,7 +41,8 @@ async def _help(ctx):
 # Price
 @bot.command()
 async def price(ctx, message):
-    embed = priceEmbed()
+    data = get_Price(message)
+    embed = priceEmbed(data)
     await ctx.send(embed=embed)
 @slash.slash(name="Price", description="Return last price for the asked asset.")
 async def _price(ctx, message):
@@ -50,7 +51,8 @@ async def _price(ctx, message):
 # Track
 @bot.command()
 async def track(ctx, message):
-    embed = trackEmbed()
+    data = get_Stats(message)
+    embed = trackEmbed(data)
     await ctx.send(embed=embed)
 @slash.slash(name="Track", description="Return stats for the asked asset.")
 async def _track(ctx, message):
