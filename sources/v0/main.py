@@ -5,10 +5,14 @@ import json
 import time
 import asyncio
 
+import yfinance as yf
+
 import discord
 from discord.ext import commands
 from discord.ext import tasks
 from discord_slash import SlashCommand
+
+from sources.v0.config import YFAPI, YFUrl
 
 TOKEN = token
 bot = commands.Bot("w!")
