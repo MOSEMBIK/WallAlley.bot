@@ -6,6 +6,8 @@ import json
 import time
 import asyncio
 
+import random
+
 import yfinance as yf
 
 import discord
@@ -23,8 +25,24 @@ async def on_ready():
     print("WallAlley.bot has join.")
 
 # ------------------------------------------------
+# Loops
 
-
+# Status
+async def status():
+    await bot.wait_until_ready()
+    s = random.randint(0, 2)
+    while not bot.is_closed():
+        if s == 0:
+            await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.playing, name="scraping the web."))
+            s = random.randint(0, 2)
+        elif s == 1:
+            await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="some charts."))
+            s = random.randint(0, 2)
+        elif s == 2:
+            await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="wolrd finances."))
+            s = random.randint(0, 2)
+        await asyncio.sleep(25)
+bot.loop.create_task(status())
 
 # ------------------------------------------------
 # Command
