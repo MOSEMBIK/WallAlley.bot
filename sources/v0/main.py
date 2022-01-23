@@ -41,7 +41,8 @@ async def _help(ctx):
 # Price
 @bot.command()
 async def price(ctx, message):
-    data = get_Price(message)
+    await ctx.send("Let me find the asset...")
+    data = await get_Price(message.upper())
     embed = priceEmbed(data)
     await ctx.send(embed=embed)
 @slash.slash(name="Price", description="Return last price for the asked asset.")
@@ -51,7 +52,8 @@ async def _price(ctx, message):
 # Track
 @bot.command()
 async def track(ctx, message):
-    data = get_Stats(message)
+    await ctx.send("Let me find the asset...")
+    data = await get_Stats(message.upper())
     embed = trackEmbed(data)
     await ctx.send(embed=embed)
 @slash.slash(name="Track", description="Return stats for the asked asset.")

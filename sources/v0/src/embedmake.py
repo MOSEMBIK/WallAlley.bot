@@ -24,11 +24,12 @@ def priceEmbed(data):
         return rEmbed
 
     rEmbed = discord.Embed(
-        title="Price",
-        description="Last price for {}.",
+        title=f"{data['name']}",
+        description=f"Last price for {data['symbol']}.",
         colour=discord.Colour.from_rgb(123, 7, 213)
     )
-    rEmbed.add_field(name="p", value="p", inline=False)
+    rEmbed.add_field(name="Last price", value=f"{data['price']}", inline=False)
+    rEmbed.add_field(name="Daily change", value=f"{data['dchange']}", inline=False)
           
     rEmbed.set_footer(text="© MOSEMBIK")
 
@@ -46,11 +47,16 @@ def trackEmbed(data):
         return rEmbed
         
     rEmbed = discord.Embed(
-        title="Track",
-        description="Track {} statistics.",
+        title=f"{data['name']}",
+        description=f"Tracked {data['symbol']} statistics. \n _{data['sector']}_",
         colour=discord.Colour.from_rgb(123, 7, 213)
     )
-    rEmbed.add_field(name="t", value="t", inline=False)
+    rEmbed.add_field(name="Last price", value=f"{data['price']}", inline=False)
+    rEmbed.add_field(name="Daily change", value=f"{data['dchange']}", inline=False)
+    
+    rEmbed.add_field(name="Day high", value=f"{data['dhigh']}", inline=True)
+    rEmbed.add_field(name="|", value="**|**", inline=True)
+    rEmbed.add_field(name="Day low", value=f"{data['dlow']}", inline=True)
           
     rEmbed.set_footer(text="© MOSEMBIK")
 
